@@ -43,7 +43,7 @@ public class SnakeProject extends JPanel implements KeyListener
         g2D.drawRect(5, 35, 395, 415);
         
         g.setColor(Color.GREEN);
-        g.fillRect(snackX, snackY, 15, 15);
+        g.fillRect(snackX, snackY, 5, 5);
         
     }
     
@@ -96,7 +96,7 @@ public class SnakeProject extends JPanel implements KeyListener
                 {
 	                score.setText("");
 	                point++;
-	                snacks();
+	                
 	                score.setText("Score: "+point);
 	                
 	                if ( point == 10 )
@@ -105,6 +105,8 @@ public class SnakeProject extends JPanel implements KeyListener
 	                	score.setText("Game Complete");
 	                	break;
 	                }
+	                
+	                snacks();
                
                 }
             }
@@ -113,6 +115,8 @@ public class SnakeProject extends JPanel implements KeyListener
             else
             {
             	gameOver = false;
+            	score.setText("Game Over!");
+            	repaint();
             }
         }
     }
